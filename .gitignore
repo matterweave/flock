@@ -1,0 +1,16 @@
+# Gorgon Ignore
+########################################
+
+## GNU Make Ignores ##
+Makefile
+*.make
+obj
+
+## VIM Ignores ##
+.*.swp
+
+## Binary ##
+Gorgon
+
+## Documentation ##
+*.html
