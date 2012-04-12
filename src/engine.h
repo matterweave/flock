@@ -7,6 +7,8 @@
 #ifndef _ENGINE_H_
 #define _ENGINE_H_
 
+ #include <string>
+
 class InputManager;
 class Renderer;
 class ScriptManager;
@@ -31,6 +33,8 @@ class Engine {
         InputManager *input;
         ScriptManager *engine_scriptor;
         Renderer *renderer;
+
+        const static std::string DEFAULT_CONFIG_FILE = "tempest.ini";
 
 		Engine(Engine &copy);
 		Engine & operator=(Engine &rhs);

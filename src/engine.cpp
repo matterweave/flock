@@ -36,7 +36,7 @@ void Engine::load_config()
         using namespace std;
 
         fstream config_file;
-        config_file.open("tempest.ini", fstream::in);
+        config_file.open(DEFAULT_CONFIG_FILE, fstream::in);
 
         // Read configuration from file into configuration structure
 
