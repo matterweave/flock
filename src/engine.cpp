@@ -10,6 +10,8 @@
 #include "scriptmanager.h"
 #include "logog/logog.hpp"
 
+#include <fstream>
+
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
 
@@ -29,7 +31,20 @@ Engine::~Engine() {
 
 void Engine::load_config()
 {
-    
+    // Open default config file
+    {
+        using namespace std;
+
+        fstream config_file;
+        config_file.open("tempest.ini", fstream::in);
+
+        // Read configuration from file into configuration structure
+
+        // Close config file
+        config_file.close();
+    }
+
+    // Verify values and provide defaults if necessary
 }
 
 void Engine::init()
