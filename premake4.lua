@@ -18,31 +18,27 @@ WINDOWS_X86_DEBUG = "lib/debug/nt/x86"
 WINDOWS_X86_RELEASE = "lib/release/nt/x86"
 
 if os.is(WINDOWS) then
-	DEBUG_LIB_DIRS.insert(WINDOWS_X86_DEBUG)
-	RELEASE_LIB_DIRS.insert(WINDOWS_X86_RELEASE)
-end
-
+    table.insert(DEBUG_LIB_DIRS, WINDOWS_X86_DEBUG)
+    table.insert(RELEASE_LIB_DIRS, WINDOWS_X86_RELEASE)
 elseif os.is(OSX) then
-end
-
 elseif os.is(LINUX) then
 end
 
 solution(PROJ_NAME)
-	configurations { "Debug", "Release" }
+    configurations { "Debug", "Release" }
 
-	project(PROJ_NAME)
-		kind("ConsoleApp")
-		language("C++")
-		files { "**.h", "**.cpp" }
+    project(PROJ_NAME)
+        kind("ConsoleApp")
+        language("C++")
+        files { "**.h", "**.cpp" }
         links { "logog", "SDL" }
 
-		configuration "Debug"
-			libdirs { DEBUG_LIB_DIRS }
-			defines { DEBUG_DEFINES }
-			flags { DEBUG_FLAGS }
+        configuration "Debug"
+            libdirs { DEBUG_LIB_DIRS }
+            defines { DEBUG_DEFINES }
+            flags { DEBUG_FLAGS }
 
-		configuration "Release"
-			libdirs { RELEASE_LIB_DIRS }
-			defines { RELEASE_DEFINES }
-			flags { RELEASE_FLAGS }
+        configuration "Release"
+            libdirs { RELEASE_LIB_DIRS }
+            defines { RELEASE_DEFINES }
+            flags { RELEASE_FLAGS }
