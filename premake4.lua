@@ -30,8 +30,9 @@ solution(PROJ_NAME)
     project(PROJ_NAME)
         kind("ConsoleApp")
         language("C++")
-        files { "**.h", "**.cpp" }
+        files { "src/**.h", "src/**.cpp" }
         links { "logog", "SDL" }
+        includedirs { "include" }
 
         configuration "Debug"
             libdirs { DEBUG_LIB_DIRS }
