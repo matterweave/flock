@@ -35,7 +35,7 @@ solution(PROJ_NAME)
 		kind("ConsoleApp")
 		language("C++")
 		files { "**.h", "**.cpp" }
-        links { "logog", "ybrec", "SDL" }
+        links { "logog", "SDL" }
 
 		configuration "Debug"
 			libdirs { DEBUG_LIB_DIRS }

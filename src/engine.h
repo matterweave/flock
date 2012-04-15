@@ -7,38 +7,37 @@
 #ifndef _ENGINE_H_
 #define _ENGINE_H_
 
- #include <string>
+#include <string>
 
 class InputManager;
 class Renderer;
 class ScriptManager;
 
 class Engine {
-	public:
-		Engine();
-		~Engine();
+    public:
+        Engine();
+        ~Engine();
 
-		void load_config();
-		void init();
-		void run();
+        void load_config();
+        void init();
+        void run();
 
-		void process_input();
-		void render();
-		void update();
+        void process_input();
+        void render();
+        void update();
 
-	private:
-		bool is_running;
-		//GameObject *scene_root;
-		//AssetManager assets;
+    private:
+        bool is_running;
+        //GameObject *scene_root;
+        //AssetManager assets;
         InputManager *input;
         ScriptManager *engine_scriptor;
         Renderer *renderer;
 
         const static std::string DEFAULT_CONFIG_FILE = "tempest.ini";
 
-		Engine(Engine &copy);
-		Engine & operator=(Engine &rhs);
+        Engine(Engine &copy);
+        Engine & operator=(Engine &rhs);
 };
 
 #endif // _ENGINE_H_
-
