@@ -9,6 +9,10 @@ obj
 ## VIM Ignores ##
 .*.swp
 
+## EMACS Ignores ##
+\#*#
+*~
+
 ## Binary ##
 Gorgon
 
