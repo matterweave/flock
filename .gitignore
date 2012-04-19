@@ -13,6 +13,9 @@ obj
 \#*#
 *~
 
+## Windows ##
+*.ps1
+
 ## Binary ##
 Gorgon
 
