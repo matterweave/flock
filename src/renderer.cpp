@@ -5,7 +5,11 @@
  */
 
 #include "renderer.h"
+#ifdef WINDOWS
+#include "SDL.h"
+#else
 #include "SDL/SDL.h"
+#endif
 
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
