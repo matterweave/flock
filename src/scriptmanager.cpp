@@ -31,5 +31,7 @@ ScriptManager * ScriptManager::new_environment(const char *name)
 bool ScriptManager::run_script(char *name)
 {
     INFO("Running script %s", name);
+
+	return true;
 }
 

@@ -57,4 +57,5 @@ int InputManager::ConvertKey(int key)
 
 bool InputManager::ConvertKeyState(int key)
 {
+	return true;
 }
