@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
         logog::Cout logOut;
 
         INFO("===================== Gorgon ========================");
-        INFO("Copyright (c) 2011, Dylan Sarber <dwsarber@gmail.com>");
+        INFO("Copyright (c) 2012, Dylan Sarber <dwsarber@gmail.com>");
         INFO("=====================================================");
 
 	    Engine game;
