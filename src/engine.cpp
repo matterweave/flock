@@ -12,6 +12,11 @@
 
 #include <fstream>
 
+/* Static Members
+------------------------------------------------------------------------------*/
+
+const std::string Engine::DEFAULT_CONFIG_FILE = "tempest.ini";
+
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
 
@@ -53,6 +58,8 @@ void Engine::init()
     input = new InputManager();
     renderer = new Renderer();
     engine_scriptor = ScriptManager::new_environment("engine");
+
+	run();
 }
 
 void Engine::run()
@@ -73,4 +80,3 @@ void Engine::process_input()
 void Engine::render() {}
 
 void Engine::update() {}
-

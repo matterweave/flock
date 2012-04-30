@@ -34,7 +34,7 @@ class Engine {
         ScriptManager *engine_scriptor;
         Renderer *renderer;
 
-        const static std::string DEFAULT_CONFIG_FILE = "tempest.ini";
+        const static std::string DEFAULT_CONFIG_FILE;
 
         Engine(Engine &copy);
         Engine & operator=(Engine &rhs);
