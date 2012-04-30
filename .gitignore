@@ -16,8 +16,14 @@ obj
 ## Windows ##
 *.ps1
 
+## Visual Studio ##
+*.sln
+*.suo
+*.vcxproj*
+
 ## Binary ##
 Gorgon
+Tempest
 
 ## Documentation ##
 *.html
