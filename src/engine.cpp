@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, Dylan Sarber <dwsarber@gmail.com>
+ * Copyright (c) 2012, Dylan Sarber <dwsarber@gmail.com>
  *
  * See LICENSE for licensing information.
  */
@@ -7,7 +7,7 @@
 #include "engine.h"
 #include "inputmanager.h"
 #include "renderer.h"
-#include "scriptmanager.h"
+//#include "scriptmanager.h"
 #include "logog/logog.hpp"
 
 #include <fstream>
@@ -26,7 +26,7 @@ Engine::~Engine() {
 //	if (scene_root != NULL) {
 //		delete scene_root;
 //	}
-    delete engine_scriptor;
+    //delete engine_scriptor;
     delete renderer;
     delete input;
 }
@@ -41,7 +41,7 @@ void Engine::load_config()
         using namespace std;
 
         fstream config_file;
-        config_file.open(DEFAULT_CONFIG_FILE, fstream::in);
+        config_file.open(DEFAULT_CONFIG_FILE.c_str(), fstream::in);
 
         // Read configuration from file into configuration structure
 
@@ -57,7 +57,7 @@ void Engine::init()
     INFO("Initializing Engine.");
     input = new InputManager();
     renderer = new Renderer();
-    engine_scriptor = ScriptManager::new_environment("engine");
+    //engine_scriptor = ScriptManager::new_environment("engine");
 
 	run();
 }

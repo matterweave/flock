@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, Dylan Sarber <dwsarber@gmail.com>
+ * Copyright (c) 2012, Dylan Sarber <dwsarber@gmail.com>
  *
  * See LICENSE for licensing information.
  */

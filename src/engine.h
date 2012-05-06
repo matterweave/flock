@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, Dylan Sarber <dwsarber@gmail.com>
+ * Copyright (c) 2012, Dylan Sarber <dwsarber@gmail.com>
  *
  * See LICENSE for licensing information.
  */
@@ -11,7 +11,7 @@
 
 class InputManager;
 class Renderer;
-class ScriptManager;
+//class ScriptManager;
 
 class Engine {
     public:
@@ -31,7 +31,7 @@ class Engine {
         //GameObject *scene_root;
         //AssetManager assets;
         InputManager *input;
-        ScriptManager *engine_scriptor;
+        //ScriptManager *engine_scriptor;
         Renderer *renderer;
 
         const static std::string DEFAULT_CONFIG_FILE;
