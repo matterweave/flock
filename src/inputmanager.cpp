@@ -31,31 +31,10 @@ void InputManager::update_input_state()
             case SDL_QUIT:
                 keyStates[WINDOW_QUIT] = true;
         }
-        //keyStates[InputManager::ConvertKey(event.type)] = InputManager::ConvertKeyState(event);
     }
 }
 
 bool InputManager::get_input(int key)
 {
     return keyStates[key];
-}
-
-/* Private Interface
-------------------------------------------------------------------------------*/
-
-int InputManager::ConvertKey(int key)
-{
-    switch (key)
-    {
-        case SDL_QUIT:
-            return WINDOW_QUIT;
-
-        default:
-            return -1;
-    }
-}
-
-bool InputManager::ConvertKeyState(int key)
-{
-	return true;
 }

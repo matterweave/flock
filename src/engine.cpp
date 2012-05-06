@@ -79,4 +79,8 @@ void Engine::process_input()
 
 void Engine::render() {}
 
-void Engine::update() {}
+void Engine::update()
+{
+    if (input->get_input(WINDOW_QUIT))
+        is_running = false;
+}

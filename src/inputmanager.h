@@ -25,9 +25,6 @@ class InputManager
 
     private:
         std::map<int,bool> keyStates;
-
-        static int ConvertKey(int key);
-        static bool ConvertKeyState(int key);
 };
 
 enum InputKey
