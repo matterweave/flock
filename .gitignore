@@ -1,4 +1,4 @@
-# Gorgon Ignore
+# Flock Ignore
 ########################################
 
 ## GNU Make Ignores ##
@@ -21,9 +21,11 @@ obj
 *.suo
 *.vcxproj*
 
+## Sublime Text ##
+*.sublime*
+
 ## Binary ##
-Gorgon
-Tempest
+Flock
 
 ## Documentation ##
 *.html
