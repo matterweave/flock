@@ -7,6 +7,10 @@
 #ifndef _ENGINE_H_
 #define _ENGINE_H_
 
+extern "C" {
+    #include "iniparser/iniparser.h"
+}
+
 #include <string>
 
 class InputManager;
@@ -33,6 +37,7 @@ class Engine {
         InputManager *input;
         //ScriptManager *engine_scriptor;
         Renderer *renderer;
+        dictionary *config_values;
 
         const static std::string DEFAULT_CONFIG_FILE;
 

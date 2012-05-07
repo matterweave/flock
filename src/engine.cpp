@@ -15,7 +15,7 @@
 /* Static Members
 ------------------------------------------------------------------------------*/
 
-const std::string Engine::DEFAULT_CONFIG_FILE = "tempest.ini";
+const std::string Engine::DEFAULT_CONFIG_FILE = "flock.ini";
 
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
@@ -29,6 +29,7 @@ Engine::~Engine() {
     //delete engine_scriptor;
     delete renderer;
     delete input;
+    iniparser_freedict(config_values);
 }
 
 /* Public Interface
@@ -36,20 +37,8 @@ Engine::~Engine() {
 
 void Engine::load_config()
 {
-    // Open default config file
-    {
-        using namespace std;
-
-        fstream config_file;
-        config_file.open(DEFAULT_CONFIG_FILE.c_str(), fstream::in);
-
-        // Read configuration from file into configuration structure
-
-        // Close config file
-        config_file.close();
-    }
-
-    // Verify values and provide defaults if necessary
+    // Parse the config file
+    config_values = iniparser_load(DEFAULT_CONFIG_FILE.c_str());
 }
 
 void Engine::init()
