@@ -5,20 +5,23 @@
  */
 
 #include "gameobject.h"
+#include "transform.h"
 
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
 
 GameObject::GameObject() {
-    //transform = new Transform(0, 0, 0);
+    transform = new Transform();
 }
 
-GameObject::GameObject(coord x, coord y) {}
+GameObject::GameObject(coord x, coord y) {
+    transform = new Transform(x, y);
+}
 
 GameObject::GameObject(coord x, coord y, int z) {
-    //transform = new Transform(x, y, z);
+    transform = new Transform(x, y, z);
 }
 
 GameObject::~GameObject() {
-    //delete transform;
+    delete transform;
 }

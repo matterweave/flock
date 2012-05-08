@@ -52,7 +52,7 @@ public:
 private:
     int id;
     std::string name;
-    Transform * transform;
+    Transform *transform;
 };
 
 #endif // _GAMEOBJECT_H_
