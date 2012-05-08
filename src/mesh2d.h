@@ -11,9 +11,25 @@
 
 struct SDL_Surface;
 
+/**
+ * A Mesh2D resource represents a renderable image.
+ *
+ * The resource is not directly included into an object for rendering. Instead, the resource acts
+ * as a reference for sharing an image. Therefore, each Mesh2D is generally unique across the
+ * running game.
+ */
 class Mesh2D {
 public:
+    /**
+     * Construct a Mesh2D with a file path.
+     *
+     * @param path The physical location of the resource.
+     */
     Mesh2D(std::string path);
+
+    /**
+     * Destroy the Mesh2D.
+     */
     ~Mesh2D();
 
     /**
