@@ -39,7 +39,7 @@ solution(PROJ_NAME)
         language("C++")
         files { "src/**.h", "src/**.cpp" }
         excludes { "src/scriptmanager.*" }
-        links { "logog", "SDL", "iniparser" }
+        links { "logog", "iniparser", "SDL", "SDL_image" }
         includedirs { "include" }
 
         configuration "Debug"
