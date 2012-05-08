@@ -9,6 +9,16 @@
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
 
-GameObject::GameObject() {}
+GameObject::GameObject() {
+    //transform = new Transform(0, 0, 0);
+}
 
-GameObject::~GameObject() {}
+GameObject::GameObject(coord x, coord y) {}
+
+GameObject::GameObject(coord x, coord y, int z) {
+    //transform = new Transform(x, y, z);
+}
+
+GameObject::~GameObject() {
+    //delete transform;
+}
