@@ -28,6 +28,14 @@ public:
     GameObject();
 
     /**
+     * Construct a GameObject with a position.
+     *
+     * @param x The x position of the object.
+     * @param y The y position of the object.
+     */
+    GameObject(coord x, coord y);
+
+    /**
      * Construct a GameObject with a position and a layer (z).
      *
      * @param x The x position of the object.
