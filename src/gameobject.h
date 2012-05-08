@@ -7,7 +7,9 @@
 #ifndef _GAMEOBJECT_H_
 #define _GAMEOBJECT_H_
 
-struct Transform;
+class Transform;
+
+#include "types.h"
 
 #include <string>
 
@@ -24,6 +26,15 @@ public:
      * Construct a GameObject.
      */
     GameObject();
+
+    /**
+     * Construct a GameObject with a position and a layer (z).
+     *
+     * @param x The x position of the object.
+     * @param y The y position of the object.
+     * @param z The layer of the object. May be between 0 and the maximum layer configured.
+     */
+    GameObject(coord x, coord y, int z);
 
     /**
      * Destroy a GameObject.
