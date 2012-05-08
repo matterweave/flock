@@ -14,6 +14,7 @@
 ------------------------------------------------------------------------------*/
 
 Mesh2D::Mesh2D(std::string path) {
+    filepath = path;
     data = IMG_Load(path.c_str());
 
     if (data == NULL)
@@ -23,4 +24,11 @@ Mesh2D::Mesh2D(std::string path) {
 Mesh2D::~Mesh2D() {
     if (data != NULL)
         SDL_FreeSurface(data);
+}
+
+/* Public Interface
+------------------------------------------------------------------------------*/
+
+std::string Mesh2D::getFilePath() {
+    return filepath;
 }

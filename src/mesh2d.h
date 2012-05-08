@@ -16,6 +16,13 @@ public:
     Mesh2D(std::string path);
     ~Mesh2D();
 
+    /**
+     * Get the absolute file path of this resource.
+     *
+     * @return The physical file path of the resource.
+     */
+    std::string getFilePath();
+
 private:
     std::string filepath;
     SDL_Surface *data;
