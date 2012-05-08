@@ -7,6 +7,8 @@
 #ifndef _MESH2D_H_
 #define _MESH2D_H_
 
+#include <string>
+
 struct SDL_Surface;
 
 class Mesh2D {
