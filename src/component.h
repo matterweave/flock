@@ -39,7 +39,7 @@ public:
 
 private:
     const char *name;
-    GameObject &parent;
+    const GameObject &parent;
 
     Component(const Component &copy);
     Component & operator=(const Component &rhs);
