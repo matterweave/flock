@@ -19,6 +19,10 @@ class Transform;
  * The GameObject is really a simple, ubiquitous container to keep track of all
  * the "things" loaded into the simluation at the moment. In doing so, they
  * become easier to find, manipulate, and keep track of.
+ *
+ * Every GameObject has a Transform (for ease), but all other components are optional
+ * and added at level load or dynamically during the game. The constructors reflect these
+ * design decisions.
  */
 class GameObject {
 public:
