@@ -53,6 +53,7 @@ private:
     int id;
     std::string name;
     Transform *transform;
+    Sprite *sprite;
 };
 
 #endif // _GAMEOBJECT_H_
