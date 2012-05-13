@@ -9,6 +9,9 @@
 
 class Renderer;
 
+#include "component.h"
+#include "mesh2d.h"
+
 /**
  * The sprite component provides a static image to render during a loop cycle.
  *

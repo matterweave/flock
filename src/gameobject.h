@@ -7,6 +7,7 @@
 #ifndef _GAMEOBJECT_H_
 #define _GAMEOBJECT_H_
 
+class Sprite;
 class Transform;
 
 #include "types.h"
@@ -57,7 +58,7 @@ private:
     int id;
     std::string name;
     Transform *transform;
-    // Sprite *sprite;
+    Sprite *sprite;
 };
 
 #endif // _GAMEOBJECT_H_

@@ -5,6 +5,7 @@
  */
 
 #include "gameobject.h"
+#include "sprite.h"
 #include "transform.h"
 
 /* Constructors & Destructor
@@ -25,6 +26,6 @@ GameObject::GameObject(coord x, coord y, int z) {
 GameObject::~GameObject() {
     if (transform != NULL)
         delete transform;
-    // if (sprite != NULL)
-    //     delete sprite;
+    if (sprite != NULL)
+        delete sprite;
 }
