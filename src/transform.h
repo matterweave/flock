@@ -8,12 +8,17 @@
 #define _TRANSFORM_H_
 
 #include "types.h"
+#include "component.h"
 
-class Transform {
+class GameObject;
+
+class Transform : public Component {
 public:
-    Transform();
-    Transform(coord x, coord y);
-    Transform(coord x, coord y, int z);
+    Transform(const GameObject &parent);
+    Transform(const GameObject &parent, coord x, coord y);
+    Transform(const GameObject &parent, coord x, coord y, int z);
+
+    void update();
 
     coord   getX();
     coord   getY();

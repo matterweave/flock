@@ -11,15 +11,15 @@
 ------------------------------------------------------------------------------*/
 
 GameObject::GameObject() {
-    transform = new Transform();
+    transform = new Transform(*this);
 }
 
 GameObject::GameObject(coord x, coord y) {
-    transform = new Transform(x, y);
+    transform = new Transform(*this, x, y);
 }
 
 GameObject::GameObject(coord x, coord y, int z) {
-    transform = new Transform(x, y, z);
+    transform = new Transform(*this, x, y, z);
 }
 
 GameObject::~GameObject() {
