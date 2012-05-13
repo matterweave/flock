@@ -25,6 +25,6 @@ GameObject::GameObject(coord x, coord y, int z) {
 GameObject::~GameObject() {
     if (transform != NULL)
         delete transform;
-    if (sprite != NULL)
-        delete sprite;
+    // if (sprite != NULL)
+    //     delete sprite;
 }
