@@ -29,3 +29,28 @@ GameObject::~GameObject() {
     if (sprite != NULL)
         delete sprite;
 }
+
+/* Public Interface
+------------------------------------------------------------------------------*/
+
+void GameObject::addComponent(Component *component) {
+    // TODO: This needs to check for duplicate components
+    components.push_back(component);
+}
+
+void GameObject::removeComponent(std::string name) {
+    // TODO: Is there a more efficient way to handle this?
+    std::vector<Component*>::iterater iter;
+    for (iter = components.begin(); it < components.end(); ++iter) {
+        if (iter->getName() == name)
+            component.remove(iter);
+    }
+}
+
+void GameObject::render(Renderer &canvas) {
+    // Later on, animations that are currently playing should draw first
+    if (sprite != NULL)
+        canvas.draw(transform, sprite);
+}
+
+void GameObject::update() {}

@@ -13,6 +13,7 @@ class Transform;
 #include "types.h"
 
 #include <string>
+#include <vector>
 
 /**
  * Represents an "object", of some sort, within the loaded scene.
@@ -54,11 +55,44 @@ public:
      */
     ~GameObject();
 
+    /**
+     * Add a new component to the GameObject.
+     *
+     * Any components added are managed by the GameObject. Memory does not need to be
+     * explicitly freed by the caller, as it will happen upon destruction of the GameObject.
+     * As such, only *new* components should ever be added.
+     *
+     * @param component The component to add.
+     */
+    void addComponent(Component *component);
+
+    /**
+     * Remove a component from the GameObject.
+     *
+     * @name The name of the component to remove.
+     */
+    void removeComponent(std::string name);
+
+    /**
+     * Render any drawables to the canvas.
+     *
+     * The rendering canvas which will be drawn to.
+     */
+    void render(Renderer &canvas);
+
+    /**
+     * Update child GameObjects and components.
+     */
+    void update();
+
 private:
     int id;
     std::string name;
     Transform *transform;
     Sprite *sprite;
+    std::vector<Component*> components;
+
+    std::vector<GameObject*> children;
 };
 
 #endif // _GAMEOBJECT_H_
