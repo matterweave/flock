@@ -52,7 +52,11 @@ void Engine::run() {
     {
         process_input();
         update();
-        scene_root->render(*renderer);
+
+        if (scene_root != NULL)
+            scene_root->render(*renderer);
+
+        renderer->display();
     }
 }
 
