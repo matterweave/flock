@@ -9,7 +9,7 @@
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
 
-Sprite::Sprite(const GameObject &parent, const Mesh2D &mesh)
+Sprite::Sprite(GameObject &parent, Mesh2D *mesh)
     : Component("sprite", parent), mesh(mesh)
 {}
 
@@ -20,6 +20,6 @@ Sprite::~Sprite() {}
 
 void Sprite::update() {}
 
-const Mesh2D & Sprite::getMesh() {
-    return mesh;
+const Mesh2D & Sprite::getMesh() const {
+    return *mesh;
 }

@@ -22,7 +22,7 @@ class Renderer;
  */
 class Sprite : public Component {
 public:
-    explicit Sprite(const GameObject &parent, const Mesh2D &mesh);
+    explicit Sprite(GameObject &parent, Mesh2D *mesh);
     ~Sprite();
 
     /**
@@ -30,7 +30,7 @@ public:
      */
     void update();
 
-    const Mesh2D & getMesh();
+    const Mesh2D & getMesh() const;
 
 private:
     Mesh2D *mesh;

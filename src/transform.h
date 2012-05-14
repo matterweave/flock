@@ -14,9 +14,9 @@ class GameObject;
 
 class Transform : public Component {
 public:
-    Transform(const GameObject &parent);
-    Transform(const GameObject &parent, coord x, coord y);
-    Transform(const GameObject &parent, coord x, coord y, int z);
+    Transform(GameObject &parent);
+    Transform(GameObject &parent, coord x, coord y);
+    Transform(GameObject &parent, coord x, coord y, int z);
 
     void update();
 

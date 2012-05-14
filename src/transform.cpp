@@ -10,15 +10,15 @@
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
 
-Transform::Transform(const GameObject &parent)
+Transform::Transform(GameObject &parent)
     : Component("transform", parent), x(0), y(0), z(0)
 {}
 
-Transform::Transform(const GameObject &parent, coord x, coord y)
+Transform::Transform(GameObject &parent, coord x, coord y)
     : Component("transform", parent), x(x), y(y), z(0)
 {}
 
-Transform::Transform(const GameObject &parent, coord x, coord y, int z)
+Transform::Transform(GameObject &parent, coord x, coord y, int z)
     : Component("transform", parent), x(x), y(y), z(z)
 {}
 
