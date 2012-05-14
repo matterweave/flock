@@ -13,8 +13,7 @@
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
 
-Mesh2D::Mesh2D(std::string path) {
-    filepath = path;
+Mesh2D::Mesh2D(std::string path) : filepath(path) {
     data = IMG_Load(path.c_str());
 
     if (data == NULL)
