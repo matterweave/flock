@@ -7,6 +7,8 @@
 #ifndef _GAMEOBJECT_H_
 #define _GAMEOBJECT_H_
 
+class Component;
+class Renderer;
 class Sprite;
 class Transform;
 
@@ -78,7 +80,7 @@ public:
      *
      * The rendering canvas which will be drawn to.
      */
-    void render(Renderer &canvas);
+    void render(Renderer &canvas) const;
 
     /**
      * Update child GameObjects and components.

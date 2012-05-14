@@ -5,8 +5,11 @@
  */
 
 #include "gameobject.h"
+#include "component.h"
+#include "renderer.h"
 #include "sprite.h"
 #include "transform.h"
+#include "logog/logog.hpp"
 
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
@@ -47,7 +50,7 @@ void GameObject::removeComponent(std::string name) {
     }
 }
 
-void GameObject::render(Renderer &canvas) {
+void GameObject::render(Renderer &canvas) const {
     // Later on, animations that are currently playing should draw first
     if (sprite != NULL)
         canvas.draw(transform, sprite);
