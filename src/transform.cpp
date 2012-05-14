@@ -29,15 +29,15 @@ void Transform::update() {
     
 }
 
-coord Transform::getX() {
+coord Transform::getX() const {
     return x;
 }
 
-coord Transform::getY() {
+coord Transform::getY() const {
     return y;
 }
 
-int Transform::getZ() {
+int Transform::getZ() const {
     return z;
 }
 

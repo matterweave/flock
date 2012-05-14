@@ -20,9 +20,9 @@ public:
 
     void update();
 
-    coord   getX();
-    coord   getY();
-    int     getZ();
+    coord   getX() const;
+    coord   getY() const;
+    int     getZ() const;
     void    setX(coord x);
     void    setY(coord y);
     void    setZ(int z);
