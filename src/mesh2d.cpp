@@ -31,3 +31,11 @@ Mesh2D::~Mesh2D() {
 std::string Mesh2D::getFilePath() {
     return filepath;
 }
+
+unsigned int Mesh2D::getHeight() const {
+    return data->h;
+}
+
+unsigned int Mesh2D::getWidth() const {
+    return data->w;
+}
