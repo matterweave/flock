@@ -26,7 +26,7 @@ public:
      * components of this type (i.e. it should be "transform" for every Transform component).
      * @param parent The GameObject this component is attached to.
      */
-    explicit Component(const char *name, const GameObject &parent);
+    explicit Component(const char *name, GameObject &parent);
 
     virtual ~Component();
 
@@ -37,12 +37,12 @@ public:
      */
     virtual void update() = 0;
 
-    std::string getName();
-    GameObject & getParent();
+    const char * getName() const;
+    GameObject & getParent() const;
 
 private:
     const char *name;
-    const GameObject &parent;
+    GameObject &parent;
 
     Component(const Component &copy);
     Component & operator=(const Component &rhs);

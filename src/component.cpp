@@ -10,7 +10,7 @@
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
 
-Component::Component(const char *name, const GameObject &parent)
+Component::Component(const char *name, GameObject &parent)
     : name(name), parent(parent)
 {}
 
@@ -19,10 +19,10 @@ Component::~Component() {}
 /* Public Interface
 ------------------------------------------------------------------------------*/
 
-const char * Component::getName() {
+const char * Component::getName() const {
     return name;
 }
 
-GameObject & Component::getParent() {
+GameObject & Component::getParent() const {
     return parent;
 }
