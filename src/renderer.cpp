@@ -30,14 +30,11 @@ Renderer::~Renderer() {
 
 void Renderer::draw(const Transform &pos, const Sprite &sprite) {
     SDL_Rect dest;
-    Mesh2D mesh = sprite.getMesh();
 
     dest.x = pos.getX();
     dest.y = pos.getY();
-    dest.w = mesh.getWidth();
-    dest.h = mesh.getHeight();
 
-    SDL_BlitSurface(mesh.data, NULL, canvas, &dest);
+    SDL_BlitSurface(sprite.getMesh().data, NULL, canvas, &dest);
 }
 
 void Renderer::display() {
