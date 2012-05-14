@@ -15,3 +15,14 @@ Component::Component(const char *name, const GameObject &parent)
 {}
 
 Component::~Component() {}
+
+/* Public Interface
+------------------------------------------------------------------------------*/
+
+const char * Component::getName() {
+    return name;
+}
+
+GameObject & Component::getParent() {
+    return parent;
+}

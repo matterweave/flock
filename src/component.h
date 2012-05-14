@@ -37,6 +37,9 @@ public:
      */
     virtual void update() = 0;
 
+    std::string getName();
+    GameObject & getParent();
+
 private:
     const char *name;
     const GameObject &parent;
