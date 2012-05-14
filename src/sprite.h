@@ -22,23 +22,18 @@ class Renderer;
  */
 class Sprite : public Component {
 public:
-    explicit Sprite(const GameObject &parent);
+    explicit Sprite(const GameObject &parent, const Mesh2D &mesh);
     ~Sprite();
-
-    /**
-     * Called during the rendering phase to draw this sprite.
-     *
-     * @param canvas The rendering canvas to draw to.
-     */
-    void render(Renderer &canvas);
 
     /**
      * See Component::update().
      */
     void update();
 
+    const Mesh2D & getMesh();
+
 private:
-    Mesh2D mesh;
+    Mesh2D *mesh;
 
     Sprite(const Sprite &copy);
     Sprite & operator=(const Sprite &rhs);
