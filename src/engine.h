@@ -13,6 +13,7 @@ extern "C" {
 
 #include <string>
 
+class GameObject;
 class InputManager;
 class Renderer;
 
