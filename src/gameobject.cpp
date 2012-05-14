@@ -43,17 +43,18 @@ void GameObject::addComponent(Component *component) {
 
 void GameObject::removeComponent(std::string name) {
     // TODO: Is there a more efficient way to handle this?
-    std::vector<Component*>::iterater iter;
-    for (iter = components.begin(); it < components.end(); ++iter) {
-        if (iter->getName() == name)
-            component.remove(iter);
+    std::vector<Component*>::iterator iter;
+    for (iter = components.begin(); iter < components.end(); ++iter) {
+        if ((*iter)->getName() == name)
+            components.erase(iter);
     }
 }
 
 void GameObject::render(Renderer &canvas) const {
     // Later on, animations that are currently playing should draw first
-    if (sprite != NULL)
-        canvas.draw(transform, sprite);
+    if (sprite != NULL) {
+        canvas.draw(*transform, *sprite);
+    }
 }
 
 void GameObject::update() {}
