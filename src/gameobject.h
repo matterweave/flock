@@ -14,8 +14,12 @@ class Transform;
 
 #include "types.h"
 
+#include <memory>
 #include <string>
 #include <vector>
+
+typedef std::shared_ptr<Component> ComponentPtr;
+typedef std::vector<ComponentPtr>::iterator ComponentIter;
 
 /**
  * Represents an "object", of some sort, within the loaded scene.
@@ -76,6 +80,13 @@ public:
     void removeComponent(std::string name);
 
     /**
+     * Get a component of the GameObject.
+     *
+     * @param name The name of the component.
+     */
+    Component & getComponent(std::string name);
+
+    /**
      * Render any drawables to the canvas.
      *
      * The rendering canvas which will be drawn to.
@@ -92,9 +103,10 @@ private:
     std::string name;
     Transform *transform;
     Sprite *sprite;
-    std::vector<Component*> components;
+    std::vector<ComponentPtr> components;
+    std::vector<std::shared_ptr<GameObject>> children;
 
-    std::vector<GameObject*> children;
+    ComponentIter findComponent(std::string name);
 };
 
 #endif // _GAMEOBJECT_H_
