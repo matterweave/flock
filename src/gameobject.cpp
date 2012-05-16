@@ -24,6 +24,9 @@ GameObject::GameObject(coord x, coord y) {
 
 GameObject::GameObject(coord x, coord y, int z) {
     transform = new Transform(*this, x, y, z);
+    // TODO: Sprite needs to sit with the rest of the components, which means no sprite* member
+    // It dun play nice with STL containers
+    sprite = new Sprite(*this, new Mesh2D("EarthboundMainChars.png"));
 }
 
 GameObject::~GameObject() {

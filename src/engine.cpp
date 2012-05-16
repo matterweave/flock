@@ -5,9 +5,11 @@
  */
 
 #include "engine.h"
+#include "gameobject.h"
 #include "inputmanager.h"
 #include "renderer.h"
 //#include "scriptmanager.h"
+#include "sprite.h"
 #include "logog/logog.hpp"
 
 #include <fstream>
@@ -43,6 +45,8 @@ void Engine::init() {
     INFO("Initializing Engine.");
     input = new InputManager();
     renderer = new Renderer();
+
+    scene_root = new GameObject(0, 0, 0);
 
 	run();
 }
