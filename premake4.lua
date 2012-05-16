@@ -33,6 +33,7 @@ end
 -- Define the project
 solution(PROJ_NAME)
     configurations { "Debug", "Release" }
+    buildoptions { "-std=c++11" }
 
     project(PROJ_NAME)
         kind("ConsoleApp")

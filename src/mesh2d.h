@@ -7,6 +7,7 @@
 #ifndef _MESH2D_H_
 #define _MESH2D_H_
 
+#include "renderer.h"
 #include <string>
 
 struct SDL_Surface;
@@ -38,6 +39,11 @@ public:
      * @return The physical file path of the resource.
      */
     std::string getFilePath();
+
+    unsigned int getHeight() const;
+    unsigned int getWidth() const;
+
+    friend class Renderer;
 
 private:
     std::string filepath;

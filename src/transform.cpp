@@ -5,28 +5,39 @@
  */
 
 #include "transform.h"
+#include "gameobject.h"
 
 /* Constructors & Destructor
 ------------------------------------------------------------------------------*/
 
-Transform::Transform() : x(0), y(0), z(0) {}
+Transform::Transform(GameObject &parent)
+    : Component("transform", parent), x(0), y(0), z(0)
+{}
 
-Transform::Transform(coord x, coord y) : x(x), y(y), z(0) {}
+Transform::Transform(GameObject &parent, coord x, coord y)
+    : Component("transform", parent), x(x), y(y), z(0)
+{}
 
-Transform::Transform(coord x, coord y, int z) : x(x), y(y), z(z) {}
+Transform::Transform(GameObject &parent, coord x, coord y, int z)
+    : Component("transform", parent), x(x), y(y), z(z)
+{}
 
 /* Public Interface
 ------------------------------------------------------------------------------*/
 
-coord Transform::getX() {
+void Transform::update() {
+    
+}
+
+coord Transform::getX() const {
     return x;
 }
 
-coord Transform::getY() {
+coord Transform::getY() const {
     return y;
 }
 
-int Transform::getZ() {
+int Transform::getZ() const {
     return z;
 }
 

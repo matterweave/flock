@@ -5,9 +5,11 @@
  */
 
 #include "engine.h"
+#include "gameobject.h"
 #include "inputmanager.h"
 #include "renderer.h"
 //#include "scriptmanager.h"
+#include "sprite.h"
 #include "logog/logog.hpp"
 
 #include <fstream>
@@ -23,10 +25,9 @@ const std::string Engine::DEFAULT_CONFIG_FILE = "flock.ini";
 Engine::Engine() : is_running(true) {}
 
 Engine::~Engine() {
-//	if (scene_root != NULL) {
-//		delete scene_root;
-//	}
-    //delete engine_scriptor;
+	if (scene_root != NULL)
+		delete scene_root;
+
     delete renderer;
     delete input;
     iniparser_freedict(config_values);
@@ -35,41 +36,41 @@ Engine::~Engine() {
 /* Public Interface
 ------------------------------------------------------------------------------*/
 
-void Engine::load_config()
-{
+void Engine::load_config() {
     // Parse the config file
     config_values = iniparser_load(DEFAULT_CONFIG_FILE.c_str());
 }
 
-void Engine::init()
-{
+void Engine::init() {
     INFO("Initializing Engine.");
     input = new InputManager();
     renderer = new Renderer();
-    //engine_scriptor = ScriptManager::new_environment("engine");
+
+    scene_root = new GameObject(0, 0, 0);
 
 	run();
 }
 
-void Engine::run()
-{
+void Engine::run() {
     while (is_running)
     {
         process_input();
         update();
-        render();
+
+        if (scene_root != NULL)
+            scene_root->render(*renderer);
+
+        renderer->display();
     }
 }
 
-void Engine::process_input()
-{
+void Engine::process_input() {
     input->update_input_state();
 }
 
-void Engine::render() {}
-
-void Engine::update()
-{
+void Engine::update() {
     if (input->get_input(WINDOW_QUIT))
         is_running = false;
+
+    scene_root->update();
 }
