@@ -18,6 +18,7 @@ class Transform;
 #include <string>
 #include <vector>
 
+typedef std::shared_ptr<GameObject> GameObjectPtr;
 typedef std::shared_ptr<Component> ComponentPtr;
 typedef std::vector<ComponentPtr>::iterator ComponentIter;
 
@@ -104,7 +105,7 @@ private:
     Transform *transform;
     Sprite *sprite;
     std::vector<ComponentPtr> components;
-    std::vector<std::shared_ptr<GameObject>> children;
+    std::vector<GameObjectPtr> children;
 
     ComponentIter findComponent(std::string name);
 };
